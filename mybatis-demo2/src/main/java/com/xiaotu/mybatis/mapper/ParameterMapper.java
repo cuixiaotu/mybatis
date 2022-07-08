@@ -1,19 +1,26 @@
 package com.xiaotu.mybatis.mapper;
 
 import com.xiaotu.mybatis.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ParameterMapper {
 
-    public int insertUser();
+    int insertUser(User user);
 
-    public void updateUser();
+    void updateUser();
 
-    public int deleteUser();
+    int deleteUser();
 
-    public User findUserById();
+    User findUserById(String id);
+    User findUserByUsername(String username);
+    User checkLogin(String username,String password);
+    User checkLoginByMap(Map<String,Object> map);
 
-    public List<User> findUserList();
+    List<User> findUserList();
+
+    User checkLoginByParam(@Param("username") String username,@Param("password") String password);
 
 }

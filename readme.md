@@ -392,10 +392,136 @@ public class MyBatisTest {
 
 - 若mapper接口中的方法参数为单个的字面量类型，此时可以使用${}和#{}以任意的名称（最好见名识意）获取参数的值，注意${}需要手动加单引号
 
+```xml
+<select id="findUserById" resultType="User">
+    select * from user where id = '${id}';
+</select>
+
+<select id="findUserByUsername" resultType="User">
+    select * from user where username = #{username};
+</select>
 ```
-<select id = 
 
+
+
+## 多个字面量类型的参数
+
+- 若mapper接口中的方法参数为多个时，此时MyBatis会自动将这些参数放在一个map集合中
+  以arg0,arg1…为键，以参数为值；
+- 以param1,param2…为键，以参数为值；
+  因此只需要通过${}和#{}访问map集合的键就可以获取相对应的值，注意${}需要手动加单引号。
+- 使用arg或者param都行，要注意的是，arg是从arg0开始的，param是从param1开始的
+
+```xml
+<select id="checkLogin" resultType="user">
+    select * from user where usernanme = #{arg0} and password = #{arg1};
+</select>
+<select id="checkLogin2" resultType="user">
+    select * from user where usernanme = '${arg0}' and password = '${arg1}';
+</select>
 ```
 
 
+
+## map集合类型的参数
+
+- 若mapper接口中的方法需要的参数为多个时，此时可以手动创建map集合，将这些数据放在map中只需要通过${}和#{}访问map集合的键就可以获取相对应的值，注意${}需要手动加单引号
+
+```java
+    User checkLoginByMap(Map<String,Object> map);
+```
+
+```xml
+<select id="checkLoginByMap" resultType="user">
+    select * from user  where username = #{username} and password = #{password} limit 1;
+</select>
+```
+
+```java
+public void testCheckLoginByMap(){
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+    Map<String,Object> map = new HashMap<>();
+    map.put("username","admin");
+    map.put("password","123456");
+    User user = mapper.checkLoginByMap(map);
+    System.out.println(user);
+}
+```
+
+## 实体类类型的参数
+
+- 若mapper接口中的方法参数为实体类对象时此时可以使用${}和#{}，通过访问实体类对象中的属性名获取属性值，注意${}需要手动加单引号
+
+```java
+ int insertUser(User user);
+```
+
+``` xml
+<insert id="insertUser">
+    insert into user values (null ,#{username},#{password},#{age},#{sex},#{email});
+</insert>
+```
+
+```java
+public void testInsertUser(){
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+    User user = new User(null,"theodore","123456",12,"男","124124@qq.com");
+    mapper.insertUser(user);
+}
+```
+
+
+
+## 使用@Param标识参数
+
+- 可以通过@Param注解标识mapper接口中的方法参数，此时，会将这些参数放在map集合中
+  - 以@Param注解的value属性值为键，以参数为值；
+  - 以param1,param2…为键，以参数为值；
+- 只需要通过${}和#{}访问map集合的键就可以获取相对应的值，注意${}需要手动加单引号
+
+```java
+User checkLoginByParam(@Param("username") String username,@Param("password") String password);
+```
+
+```xml
+<select id="checkLoginByParam" resultType="user">
+    select * from user  where username = #{username} and password = #{password} limit 1;
+</select>
+```
+
+```java
+@Test
+public void testCheckLoginByParam(){
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+    User user =mapper.checkLoginByParam("theodore","123456");
+    System.out.println(user);
+}
+```
+
+## 总结
+
+- 建议分成两种情况进行处理
+  1. 实体类类型的参数
+  2. 使用@Param标识参数
+
+
+
+## @param源码解析
+
+
+
+![image-20220708182006873](images/readme/image-20220708182006873.png)
+
+
+
+![image-20220708182645419](images/readme/image-20220708182645419.png)
+
+![image-20220708183303259](images/readme/image-20220708183303259.png)
+
+
+
+# 第四章 各种查询功能
 
