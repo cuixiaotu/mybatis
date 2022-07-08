@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.xaiotu.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaotu.mybatis.mapper.UserMapper">
+    <insert id="insertUser">
+    insert into user values (null ,'admin','123456',18,'男','123124@qq.com')
+</insert>
+    <update id="updateUser">
+    update user set username = "张三" where id = 2;
+</update>
+    <delete id="deleteUser">
+    delete from user where id = 3;
+</delete>
+    <!--
+         查询功能必须设置 resultType或resultMap
+         resultType 设置默认的映射关系
+         resultMap  设置自定义的映射关系
+    -->
+    <select id="getUserById" resultType="user">
+    select * from user where id = 1;
+</select>
+    <select id="getUserList" resultType="User">
+    select * from user;
+</select>
+
+</mapper>

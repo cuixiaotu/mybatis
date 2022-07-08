@@ -23,23 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/com/xiaotu/mybatis/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/log4j.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/ParameterMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/pojo/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/utils/SqlSessionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/com.xaiotu.mybatis.mapper/ParameterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/com/xiaotu/mybatis/mapper/ParameterMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/log4j.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/xiaotu/mybatis/ParameterMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/xiaotu/mybatis/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/xiaotu/mybatis/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/xiaotu/mybatis/MyBatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/xiaotu/mybatis/MyBatisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,18 +76,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-demo1/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-demo2/src/main/java" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4183908" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xiaotu2.mybatis.pojo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\project\mybatis\mybatis-demo2\src\main\java" />
+      <recent name="D:\project\project\mybatis\mybatis-demo2\src\main\resources" />
+      <recent name="D:\project\project\mybatis\mybatis-demo2\src" />
+      <recent name="D:\project\project\mybatis\mybatis-demo2\src\main" />
       <recent name="D:\project\project\mybatis\mybatis-demo1\src\test" />
-      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\resources" />
-      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\java\com\xiaotu\mybatis\pojo" />
-      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\java\com\xiaotu\mybatis\mapper" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -102,16 +99,14 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyBatisTest.testGetUserList">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ParameterMapperTest.testGetUserList">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,24 +159,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyBatisTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo1" />
+    <configuration name="ParameterMapperTest.testGetUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="PATTERN" value="com.xiaotu2.mybatis.pojo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.MyBatisTest" />
-      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu2.mybatis.pojo.ParameterMapperTest" />
+      <option name="METHOD_NAME" value="testGetUserList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ParameterMapperTest.testParameterMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo2" />
+      <module name="mybatis-demo2-bak" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.xiaotu.mybatis.*" />
@@ -198,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParameterMapperTest.testGetUserList" />
+        <item itemvalue="JUnit.ParameterMapperTest.testParameterMapper" />
         <item itemvalue="JUnit.MyBatisTest.testGetUserList" />
         <item itemvalue="JUnit.MyBatisTest.testMyBatis" />
         <item itemvalue="JUnit.MyBatisTest.testGetUserById" />
-        <item itemvalue="JUnit.MyBatisTest.testUpdate" />
-        <item itemvalue="JUnit.ParameterMapperTest.testParameterMapper" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +211,8 @@
       <updated>1657173131358</updated>
       <workItem from="1657173331021" duration="2293000" />
       <workItem from="1657177577672" duration="4031000" />
-      <workItem from="1657265295161" duration="2713000" />
+      <workItem from="1657265295161" duration="3649000" />
+      <workItem from="1657268974876" duration="1087000" />
     </task>
     <servers />
   </component>
@@ -233,16 +229,21 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="153" key="#Project_Structure" timestamp="1657183161607">
+    <state x="440" y="153" key="#Project_Structure" timestamp="1657269810666">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="440" y="153" key="#Project_Structure/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183161607" />
+    <state x="440" y="153" key="#Project_Structure/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657269810666" />
     <state x="765" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1657181776010">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657181776010" />
+    <state x="562" y="491" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1657269889897">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="562" y="491" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657269889897" />
     <state x="690" y="333" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1657183120422">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -251,38 +252,38 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="634" y="319" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183811577" />
-    <state width="1876" height="481" key="GridCell.Tab.0.bottom" timestamp="1657267940787">
+    <state width="1876" height="311" key="GridCell.Tab.0.bottom" timestamp="1657270031473">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="481" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
-    <state width="1876" height="481" key="GridCell.Tab.0.center" timestamp="1657267940787">
+    <state width="1876" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657270031473" />
+    <state width="1876" height="311" key="GridCell.Tab.0.center" timestamp="1657270031473">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="481" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
-    <state width="1876" height="481" key="GridCell.Tab.0.left" timestamp="1657267940787">
+    <state width="1876" height="311" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657270031473" />
+    <state width="1876" height="311" key="GridCell.Tab.0.left" timestamp="1657270031472">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="481" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
-    <state width="1876" height="481" key="GridCell.Tab.0.right" timestamp="1657267940787">
+    <state width="1876" height="311" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657270031472" />
+    <state width="1876" height="311" key="GridCell.Tab.0.right" timestamp="1657270031473">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="481" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
-    <state x="440" y="153" key="SettingsEditor" timestamp="1657183818923">
+    <state width="1876" height="311" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657270031473" />
+    <state x="440" y="153" key="SettingsEditor" timestamp="1657269033574">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="440" y="153" key="SettingsEditor/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183818923" />
+    <state x="440" y="153" key="SettingsEditor/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657269033574" />
     <state x="658" y="470" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1657183151063">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="658" y="470" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183151063" />
-    <state x="662" y="312" width="596" height="536" key="find.popup" timestamp="1657268002048">
+    <state x="662" y="312" width="596" height="536" key="find.popup" timestamp="1657268374815">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="662" y="312" width="596" height="536" key="find.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657268002048" />
-    <state x="330" y="239" key="new project wizard" timestamp="1657265510242">
+    <state x="662" y="312" width="596" height="536" key="find.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657268374815" />
+    <state x="330" y="239" key="new project wizard" timestamp="1657269667050">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="330" y="239" key="new project wizard/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657265510242" />
+    <state x="330" y="239" key="new project wizard/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657269667050" />
     <state x="616" y="265" width="672" height="677" key="run.anything.popup" timestamp="1657183918076">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
