@@ -525,3 +525,79 @@ public void testCheckLoginByParam(){
 
 # 第四章 各种查询功能
 
+1. 如果查询出的数据只有一条，可以通过
+   - 实体类对象接收
+   - List集合接收
+   - Map集合接收，结果{password=123456, sex=男, id=1, age=23, username=admin
+
+2. 如果查询出的数据有多条，一定不能用实体类对象接收，会抛异常TooManyResultsException，可以通过
+   - 实体类类型的LIst集合接收
+   - Map类型的LIst集合接收
+   - 在mapper接口的方法上添加@MapKey注解
+
+## 查询一个实体类对象
+
+```java
+User getUserById(@Param("id") int id)
+```
+
+```xml
+<select id="getUserById" resultType="user">
+    select * from user where id = #{id}
+</select>
+```
+
+## 查询一个List集合
+
+```java
+/*查询用户列表*/
+List<User> getUserList();
+```
+
+```xml
+<select id="getUserList" resultType="user">
+    select * from user;
+</select>
+```
+
+## 查询单个数据
+
+```java
+/*查询用户总记录数*/
+int getCount();
+```
+
+```xml
+<select id="getCount" resultType="int">
+    select count(1) from user;
+</select>
+```
+
+## 查询一条数据为map集合
+
+```java
+ /*查询一条数据为map集合*/
+Map<String,Object> getUserToMap(@Param("id") int id);
+```
+
+```xml
+<select id="getUserToMap" resultType="map">
+    select * from user where id = #{id}
+</select>
+```
+
+## 查询多条数据为map集合
+
+```java
+ /*查询多条数据为map集合*/
+//    List<Map<String,Object>> getAllUserToMap();
+@MapKey("id")
+Map<String,Object> getAllUserToMap();
+```
+
+```xml
+<select id="getAllUserToMap" resultType="map">
+    select * from user;
+</select>
+```
+
