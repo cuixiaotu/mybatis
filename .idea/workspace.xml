@@ -3,8 +3,44 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="" />
+    <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/com/xiaotu/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/ParameterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/utils/SqlSessionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/com.xaiotu.mybatis.mapper/ParameterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/xiaotu/mybatis/ParameterMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/xiaotu/mybatis/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/java/com/xiaotu/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/xiaotu/mybatis/MyBatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo1/src/test/java/com/xiaotu/mybatis/MyBatisTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +49,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="mybatis-config" />
         <option value="Interface" />
+        <option value="ParameterMapper" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -26,6 +67,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2BbS89ObxKLluV9j9OOtpOchRqJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,29 +82,129 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/junit/junit/4.13.1" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-demo1/src/test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4183908" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\project\mybatis\mybatis-demo1\src\test" />
+      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\resources" />
+      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\java\com\xiaotu\mybatis\pojo" />
+      <recent name="D:\project\project\mybatis\mybatis-demo1\src\main\java\com\xiaotu\mybatis\mapper" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MyBatisTest.testGetUserList">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyBatisTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testGetUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testGetUserList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testMyBatis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testMyBatis" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParameterMapperTest.testParameterMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.ParameterMapperTest" />
+      <option name="METHOD_NAME" value="testParameterMapper" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyBatisTest.testGetUserList" />
+        <item itemvalue="JUnit.MyBatisTest.testMyBatis" />
+        <item itemvalue="JUnit.MyBatisTest.testGetUserById" />
+        <item itemvalue="JUnit.MyBatisTest.testUpdate" />
+        <item itemvalue="JUnit.ParameterMapperTest.testParameterMapper" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,11 +216,23 @@
       <updated>1657173131358</updated>
       <workItem from="1657173331021" duration="2293000" />
       <workItem from="1657177577672" duration="4031000" />
+      <workItem from="1657265295161" duration="2713000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="153" key="#Project_Structure" timestamp="1657183161607">
@@ -95,22 +251,22 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="634" y="319" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183811577" />
-    <state width="1876" height="317" key="GridCell.Tab.0.bottom" timestamp="1657185230271">
+    <state width="1876" height="481" key="GridCell.Tab.0.bottom" timestamp="1657267940787">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="317" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657185230271" />
-    <state width="1876" height="317" key="GridCell.Tab.0.center" timestamp="1657185230271">
+    <state width="1876" height="481" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
+    <state width="1876" height="481" key="GridCell.Tab.0.center" timestamp="1657267940787">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="317" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657185230271" />
-    <state width="1876" height="317" key="GridCell.Tab.0.left" timestamp="1657185230271">
+    <state width="1876" height="481" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
+    <state width="1876" height="481" key="GridCell.Tab.0.left" timestamp="1657267940787">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="317" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657185230271" />
-    <state width="1876" height="317" key="GridCell.Tab.0.right" timestamp="1657185230271">
+    <state width="1876" height="481" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
+    <state width="1876" height="481" key="GridCell.Tab.0.right" timestamp="1657267940787">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="317" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657185230271" />
+    <state width="1876" height="481" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657267940787" />
     <state x="440" y="153" key="SettingsEditor" timestamp="1657183818923">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -119,14 +275,14 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="658" y="470" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183151063" />
-    <state x="662" y="312" width="596" height="536" key="find.popup" timestamp="1657182946269">
+    <state x="662" y="312" width="596" height="536" key="find.popup" timestamp="1657268002048">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="662" y="312" width="596" height="536" key="find.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657182946269" />
-    <state x="330" y="239" key="new project wizard" timestamp="1657174150287">
+    <state x="662" y="312" width="596" height="536" key="find.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657268002048" />
+    <state x="330" y="239" key="new project wizard" timestamp="1657265510242">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="330" y="239" key="new project wizard/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657174150287" />
+    <state x="330" y="239" key="new project wizard/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657265510242" />
     <state x="616" y="265" width="672" height="677" key="run.anything.popup" timestamp="1657183918076">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

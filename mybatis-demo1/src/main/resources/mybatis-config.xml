@@ -1,21 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        PUBLIC "-//com.xiaotu.mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--设置连接数据库的环境-->
+    <properties resource="jdbc.properties" />
+
+    <!-- typeAliases:设置某个类型的别名
+         type：设置需要设置别名的类型
+         alias:设置某个类型的别名，若不设置改属性，则为类名
+    -->
+    <typeAliases>
+<!--        <typeAlias type="com.xiaotu.mybatis.pojo"/>-->
+        <!--以包为单位时,即设置包下的所有类型为默认的别名-->
+        <package name="com.xiaotu.mybatis.pojo"/>
+    </typeAliases>
+
+    <!-- environments:配置多个连接数据库的环境
+            default:设置默认使用的环境ID
+    -->
     <environments default="development">
+    <!-- environment：配置某个具体的环境
+            id：表示连接数据库的环境的唯一标识，不能重复
+    -->
         <environment id="development">
+            <!-- transactionManager: 设置事务管理方式
+                    type:"JDBC|MANAGED"
+                    JDBC：当前环境中，执行SQL时，使用的是JDBC中原生的事务管理
+                    MANAGED：被管理 spring
+            -->
             <transactionManager type="JDBC"/>
+            <!-- dataSource：配置数据源
+                    type:设置数据源类型
+                    type="POOLED|UNPOOLED|JNDI"
+                    POOLED:表示使用数据库连接池缓存数据库连接
+                    UNPOOLED:表示不使用数据库连接池
+                    JNDI:表示使用上下文中的数据源
+            -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
-                <property name="username" value="root"/>
-                <property name="password" value="root"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mappers/UserMapper.xml"/>
+        <!--<mapper resource="mappers/UserMapper.xml"/>-->
+        <!--以包为单位，将包下的所有映射文件引入核心配置文件
+            1.此方式必须保证mapper接口和mapper的映射文件在相同的包下
+            2.mapper要和映射文件的名字一致
+        -->
+        <package name="com.xiaotu.mybatis.mapper"/>
     </mappers>
 </configuration>
