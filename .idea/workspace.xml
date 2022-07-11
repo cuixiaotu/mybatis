@@ -23,12 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/SelectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/com/xiaotu/mybatis/mapper/SelectMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/xiaotu/mybatis/pojo/SelectMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/SQLMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/com/xiaotu/mybatis/mapper/SQLMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo2/src/test/java/com/xiaotu/mybatis/pojo/SQLMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo2/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo2/target/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/SelectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo2/src/main/java/com/xiaotu/mybatis/mapper/SelectMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +40,8 @@
       <list>
         <option value="mybatis-config" />
         <option value="Interface" />
-        <option value="ParameterMapper" />
         <option value="Class" />
+        <option value="ParameterMapper" />
       </list>
     </option>
   </component>
@@ -98,19 +97,21 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SelectMapperTest.testGetAllUserToMap">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SQLMapperTest.testGetUserByTableName">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParameterMapperTest.testInsertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SQLMapperTest.testDeleteMany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-demo2" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +120,55 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.ParameterMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SQLMapperTest" />
+      <option name="METHOD_NAME" value="testDeleteMany" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLMapperTest.testGetUserByLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SQLMapperTest" />
+      <option name="METHOD_NAME" value="testGetUserByLike" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLMapperTest.testGetUserByTableName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SQLMapperTest" />
+      <option name="METHOD_NAME" value="testGetUserByTableName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLMapperTest.testInsertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SQLMapperTest" />
       <option name="METHOD_NAME" value="testInsertUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -142,61 +191,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectMapperTest.testGetCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SelectMapperTest" />
-      <option name="METHOD_NAME" value="testGetCount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SelectMapperTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SelectMapperTest" />
-      <option name="METHOD_NAME" value="testGetUserById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SelectMapperTest.testGetUserToMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.pojo" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.pojo.SelectMapperTest" />
-      <option name="METHOD_NAME" value="testGetUserToMap" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SQLMapperTest.testGetUserByTableName" />
+        <item itemvalue="JUnit.SQLMapperTest.testGetUserByLike" />
+        <item itemvalue="JUnit.SQLMapperTest.testInsertUser" />
+        <item itemvalue="JUnit.SQLMapperTest.testDeleteMany" />
         <item itemvalue="JUnit.SelectMapperTest.testGetAllUserToMap" />
-        <item itemvalue="JUnit.ParameterMapperTest.testInsertUser" />
-        <item itemvalue="JUnit.SelectMapperTest.testGetUserById" />
-        <item itemvalue="JUnit.SelectMapperTest.testGetUserToMap" />
-        <item itemvalue="JUnit.SelectMapperTest.testGetCount" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +212,8 @@
       <workItem from="1657173331021" duration="2293000" />
       <workItem from="1657177577672" duration="4031000" />
       <workItem from="1657265295161" duration="3649000" />
-      <workItem from="1657268974876" duration="12475000" />
+      <workItem from="1657268974876" duration="12790000" />
+      <workItem from="1657510851828" duration="3621000" />
     </task>
     <servers />
   </component>
@@ -251,38 +253,38 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="634" y="319" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183811577" />
-    <state width="1876" height="238" key="GridCell.Tab.0.bottom" timestamp="1657284326728">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1657513445013">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326728" />
-    <state width="1876" height="238" key="GridCell.Tab.0.center" timestamp="1657284326728">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657513445013" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1657513445013">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326728" />
-    <state width="1876" height="238" key="GridCell.Tab.0.left" timestamp="1657284326728">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657513445013" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1657513445013">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326728" />
-    <state width="1876" height="238" key="GridCell.Tab.0.right" timestamp="1657284326728">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657513445013" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1657513445013">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326728" />
-    <state width="1876" height="238" key="GridCell.Tab.1.bottom" timestamp="1657284326602">
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657513445013" />
+    <state width="1876" height="411" key="GridCell.Tab.1.bottom" timestamp="1657284713315">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326602" />
-    <state width="1876" height="238" key="GridCell.Tab.1.center" timestamp="1657284326602">
+    <state width="1876" height="411" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284713315" />
+    <state width="1876" height="411" key="GridCell.Tab.1.center" timestamp="1657284713314">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326602" />
-    <state width="1876" height="238" key="GridCell.Tab.1.left" timestamp="1657284326602">
+    <state width="1876" height="411" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284713314" />
+    <state width="1876" height="411" key="GridCell.Tab.1.left" timestamp="1657284713314">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326602" />
-    <state width="1876" height="238" key="GridCell.Tab.1.right" timestamp="1657284326602">
+    <state width="1876" height="411" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284713314" />
+    <state width="1876" height="411" key="GridCell.Tab.1.right" timestamp="1657284713315">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="238" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284326602" />
+    <state width="1876" height="411" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657284713315" />
     <state x="440" y="153" key="SettingsEditor" timestamp="1657273088424">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

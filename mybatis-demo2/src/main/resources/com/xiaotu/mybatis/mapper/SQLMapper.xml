@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.xiaotu.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaotu.mybatis.mapper.SQLMapper">
+    <select id="getUserByLike" resultType="user">
+        select * from user where username like "%"#{username}"%";
+    </select>
+    <delete id="deleteMany">
+        delete from user where id in (${ids});
+    </delete>
+    <select id="getUserByTableName" resultType="User">
+        select * from ${tableName};
+    </select>
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into user values(null,#{username},#{password},#{age},#{sex},#{email})
+    </insert>
+
+
+</mapper>

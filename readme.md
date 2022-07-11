@@ -576,7 +576,7 @@ int getCount();
 ## 查询一条数据为map集合
 
 ```java
- /*查询一条数据为map集合*/
+/*查询一条数据为map集合*/
 Map<String,Object> getUserToMap(@Param("id") int id);
 ```
 
@@ -589,8 +589,8 @@ Map<String,Object> getUserToMap(@Param("id") int id);
 ## 查询多条数据为map集合
 
 ```java
- /*查询多条数据为map集合*/
-//    List<Map<String,Object>> getAllUserToMap();
+/*查询多条数据为map集合*/
+//List<Map<String,Object>> getAllUserToMap();
 @MapKey("id")
 Map<String,Object> getAllUserToMap();
 ```
@@ -601,3 +601,131 @@ Map<String,Object> getAllUserToMap();
 </select>
 ```
 
+## 模糊查询
+
+```java
+/* 根据用户名进行模糊查询
+ * @param username 
+ * @return java.util.List<com.atguigu.mybatis.pojo.User>
+ */
+List<User> getUserByLike(@Param("username") String username);
+<!--List<User> getUserByLike(@Param("username") String username);-->
+```
+
+```xml
+<select id="getUserByLike" resultType="User">
+	<!--select * from t_user where username like '%${username}%'-->  
+	<!--select * from t_user where username like concat('%',#{username},'%')-->  
+	select * from t_user where username like "%"#{username}"%"
+</select>
+```
+
+
+
+## 批量删除
+
+```java
+int deleteMore(@Param("ids") String ids);
+```
+
+```xml
+<delete id="deleteMore">
+delete from t_user where id in (${ids})
+</delete>
+```
+
+
+
+## 动态设置表名
+
+只能使用${}，因为表名不能加单引号
+
+```java
+List<User> getUserByTable(@Param("tableName") String tableName);
+```
+
+
+
+```xml
+<select id="getUserByTable" resultType="User">
+	select * from ${tableName}
+</select>
+```
+
+
+## 添加功能获取自增的主键
+
+- 使用场景
+
+  - t_clazz(clazz_id,clazz_name)
+  - t_student(student_id,student_name,clazz_id)
+
+  1. 添加班级信息
+  2. 获取新添加的班级的id
+  3. 为班级分配学生，即将某学的班级id修改为新添加的班级的id
+
+- 在mapper.xml中设置两个属性
+  - useGeneratedKeys：设置使用自增的主键
+  - keyProperty：因为增删改有统一的返回值是受影响的行数，因此只能将获取的自增的主键放在传输的参数user对象的某个属性中
+
+```java
+void insertUser(User user)
+```
+
+```xml
+<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+    insert into user values(null,#{username},#{password},#{age},#{sex},#{email})
+</insert>
+```
+
+
+
+
+自定义映射resultMap
+resultMap处理字段和属性的映射关系
+resultMap：设置自定义映射
+属性：
+id：表示自定义映射的唯一标识，不能重复
+type：查询的数据要映射的实体类的类型
+子标签：
+id：设置主键的映射关系
+result：设置普通字段的映射关系
+子标签属性：
+property：设置映射关系中实体类中的属性名
+column：设置映射关系中表中的字段名
+若字段名和实体类中的属性名不一致，则可以通过resultMap设置自定义映射，即使字段名和属性名一致的属性也要映射，也就是全部属性都要列出来
+<resultMap id="empResultMap" type="Emp">
+<id property="eid" column="eid"></id>
+<result property="empName" column="emp_name"></result>
+<result property="age" column="age"></result>
+<result property="sex" column="sex"></result>
+<result property="email" column="email"></result>
+</resultMap>
+<!--List<Emp> getAllEmp();-->
+
+<select id="getAllEmp" resultMap="empResultMap">
+	select * from t_emp
+</select>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+若字段名和实体类中的属性名不一致，但是字段名符合数据库的规则（使用_），实体类中的属性名符合Java的规则（使用驼峰）。此时也可通过以下两种方式处理字段名和实体类中的属性的映射关系
+可以通过为字段起别名的方式，保证和实体类中的属性名保持一致
+<!--List<Emp> getAllEmp();-->
+<select id="getAllEmp" resultType="Emp">
+	select eid,emp_name empName,age,sex,email from t_emp
+</select>
+1
+2
+3
+4
+可以在MyBatis的核心配置文件中的setting标签中，设置一个全局配置信息mapUnderscoreToCamelCase，可以在查询表中数据时，自动将_类型的字段名转换为驼峰，例如：字段名user_name，设置了mapUnderscoreToCamelCase，此时字段名就会转换为userName。核心配置文件详解
+```
