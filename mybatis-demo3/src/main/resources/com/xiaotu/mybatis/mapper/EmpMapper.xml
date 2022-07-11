@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.xiaotu.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaotu.mybatis.mapper.EmpMapper">
+
+
+    <!--根据部门分布查员工 第二步-->
+    <select id="getDeptAndEmpByStepTwo" resultType="emp">
+        select * from emp where did = #{did};
+    </select>
+
+    <!--根据员工分布查部门 第一步-->
+    <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
+        select * from emp where eid = #{eid};
+    </select>
+    <resultMap id="empAndDeptByStepResultMap" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <association property="dept" select="com.xiaotu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo" column="did">
+        </association>
+    </resultMap>
+
+    <select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
+        select emp.*,dept.* from emp left join dept on emp.eid = dept.did where emp.eid = #{eid};
+    </select>
+
+    <resultMap id="empAndDeptResultMapTwo" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <association property="dept" javaType="Dept">
+         <id column="did" property="did"></id>
+         <result property="deptName" column="dept_name"></result>
+      </association>
+    </resultMap>
+
+   <resultMap id="empAndDeptResultMapOne" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>
+    </resultMap>
+
+    <select id="getAllEmp" resultMap="empResultMap">
+        select * from emp;
+    </select>
+    <resultMap id="empResultMap" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+    </resultMap>
+</mapper>

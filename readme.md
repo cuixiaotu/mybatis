@@ -680,52 +680,218 @@ void insertUser(User user)
 
 
 
+# 第五章 自定义映射resultMap
 
-自定义映射resultMap
-resultMap处理字段和属性的映射关系
-resultMap：设置自定义映射
-属性：
-id：表示自定义映射的唯一标识，不能重复
-type：查询的数据要映射的实体类的类型
-子标签：
-id：设置主键的映射关系
-result：设置普通字段的映射关系
-子标签属性：
-property：设置映射关系中实体类中的属性名
-column：设置映射关系中表中的字段名
-若字段名和实体类中的属性名不一致，则可以通过resultMap设置自定义映射，即使字段名和属性名一致的属性也要映射，也就是全部属性都要列出来
-<resultMap id="empResultMap" type="Emp">
-<id property="eid" column="eid"></id>
-<result property="empName" column="emp_name"></result>
-<result property="age" column="age"></result>
-<result property="sex" column="sex"></result>
-<result property="email" column="email"></result>
-</resultMap>
-<!--List<Emp> getAllEmp();-->
+## resultMap处理字段和属性的映射关系
 
-<select id="getAllEmp" resultMap="empResultMap">
-	select * from t_emp
-</select>
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-若字段名和实体类中的属性名不一致，但是字段名符合数据库的规则（使用_），实体类中的属性名符合Java的规则（使用驼峰）。此时也可通过以下两种方式处理字段名和实体类中的属性的映射关系
-可以通过为字段起别名的方式，保证和实体类中的属性名保持一致
-<!--List<Emp> getAllEmp();-->
+当字段名和实体类中的属性名不一致的时候
+
+1. 使用resultMap(最常使用 新版xml可以不写字段名和属性名一样的映射)
+
+```xml
+    <resultMap id="empResultMap" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+    </resultMap>
+    <select id="getAllEmp" resultMap="empResultMap">
+        select * from emp;
+    </select>
+```
+
+2. SQL语句写别名
+
+```xml
 <select id="getAllEmp" resultType="Emp">
 	select eid,emp_name empName,age,sex,email from t_emp
 </select>
-1
-2
-3
-4
-可以在MyBatis的核心配置文件中的setting标签中，设置一个全局配置信息mapUnderscoreToCamelCase，可以在查询表中数据时，自动将_类型的字段名转换为驼峰，例如：字段名user_name，设置了mapUnderscoreToCamelCase，此时字段名就会转换为userName。核心配置文件详解
 ```
+
+3. MyBatis配置参数
+   可以在MyBatis的核心配置文件中的setting标签中，设置一个全局配置信息mapUnderscoreToCamelCase，可以在查询表中数据时，自动将_类型的字段名转换为驼峰，例如：字段名user_name，设置了mapUnderscoreToCamelCase，此时字段名就会转换为userName。
+
+
+
+## 多对一映射处理
+
+查询员工信息以及员工所对应的部门信息
+
+1. 级联方式处理映射关系
+
+```xml
+    <resultMap id="empAndDeptResultMapOne" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>
+
+    </resultMap>
+    <select id="getEmpAndDept" resultMap="empAndDeptResultMapOne">
+        select * from emp left join dept on emp.eid = dept.did where emp.eid = #{eid};
+    </select>x
+```
+
+
+
+2. 使用associaion处理映射关系
+   - association：处理多对一的映射关系
+   - property：需要处理多对的映射关系的属性名
+   - javaType：该属性的类型
+
+```xml
+<select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
+    select emp.*,dept.* from emp left join dept on emp.eid = dept.did where emp.eid = #{eid};
+</select>
+
+<resultMap id="empAndDeptResultMapTwo" type="emp">
+    <id property="eid" column="eid"></id>
+    <result property="empName" column="emp_name"></result>
+    <result property="age" column="age"></result>
+    <result property="sex" column="sex"></result>
+    <result property="email" column="email"></result>
+    <association property="dept" javaType="Dept">
+     <id column="did" property="did"></id>
+     <result property="deptName" column="dept_name"></result>
+  </association>
+</resultMap>
+```
+
+
+
+3. 分步查询
+   - select：设置分布查询的sql的唯一标识（namespace.SQLId或mapper接口的全类名.方法名）
+   - column：设置分步查询的条件
+
+3.1 查询员工信息
+
+```java
+Emp getEmpAndDeptByStepOne(@Param("eid") Integer eid);
+```
+
+```xml
+<select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
+    select * from emp where eid = #{eid};
+</select>
+<resultMap id="empAndDeptByStepResultMap" type="emp">
+    <id property="eid" column="eid"></id>
+    <result property="empName" column="emp_name"></result>
+    <result property="age" column="age"></result>
+    <result property="sex" column="sex"></result>
+    <result property="email" column="email"></result>
+    <association property="dept" select="com.xiaotu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo" column="did">
+    </association>
+</resultMap>
+```
+
+3.2 将column的值当参数丢给第二个查询语句
+
+```java
+Dept getEmpAndDeptByStepTwo(@Param("did") int did);
+```
+
+```xml
+<select id="getEmpAndDeptByStepTwo" resultMap="empAndDeptByStepTwoResultMap">
+    select * from dept where did = #{did};
+</select>
+
+<resultMap id="empAndDeptByStepTwoResultMap" type="Dept">
+    <id property="did" column="did"></id>
+    <result property="deptName" column="dept_name"></result>
+</resultMap>
+```
+
+
+
+## 一对多映射处理
+
+```java
+//Dept类增加 List
+private List<Emp> emps;
+```
+
+1. collection
+
+- collection：用来处理一对多的映射关系
+- ofType：表示该属性对应的集合中存储的数据的类型
+
+```xml
+<select id="getDeptAndEmp" resultMap="getDeptAndEmpResultMap">
+    select * from dept left join emp on dept.did = emp.did where dept.did = #{did};
+</select>
+<resultMap id="getDeptAndEmpResultMap" type="Dept">
+    <id property="did" column="did"></id>
+    <result property="deptName" column="dept_name"></result>
+    <collection property="emps" ofType="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+    </collection>
+</resultMap>
+```
+
+
+
+2. 分布查询
+
+根据部门查人员
+
+ 2.1 查询部门信息
+
+```java
+Dept getDeptAndEmpByStepOne(@Param("did") int did);
+```
+
+```xml
+<select id="getDeptAndEmpByStepOne" resultMap="deptAndEmpByStepOneResultMap">
+    select * from dept where did = #{did};
+</select>
+<resultMap id="deptAndEmpByStepOneResultMap" type="dept">
+    <id property="did" column="did"></id>
+    <result property="deptName" column="dept_name"></result>
+    <collection property="emps" select="com.xiaotu.mybatis.mapper.EmpMapper.getDeptAndEmpByStepTwo" column="did"></collection>
+</resultMap>
+```
+
+ 2.2 根据部门ID查询员工信息
+
+```java
+List<Emp> getDeptAndEmpByStepTwo(@Param("did") Integer did);
+```
+
+```xml
+<select id="getDeptAndEmpByStepTwo" resultType="dept">
+    select * from dept where did = #{did};
+</select>
+```
+
+
+
+## 延迟加载
+
+- 分步查询的优点：可以实现延迟加载，但是必须在核心配置文件中设置全局配置信息：
+  - lazyLoadingEnabled：延迟加载的全局开关。当开启时，所有关联对象都会延迟加载
+  - aggressiveLazyLoading：当开启时，任何方法的调用都会加载该对象的所有属性。 否则，每个属性会按需加载
+- 此时就可以实现按需加载，获取的数据是什么，就只会执行相应的sql。此时可通过association和collection中的fetchType属性设置当前的分步查询是否使用延迟加载，fetchType=“lazy(延迟加载)|eager(立即加载)”
+
+```xml
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+```
+
+```java
+    @Test
+    public void testLazy(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        System.out.println(mapper.getDeptAndEmpByStepOne(1).getDeptName());
+    }
+```
+

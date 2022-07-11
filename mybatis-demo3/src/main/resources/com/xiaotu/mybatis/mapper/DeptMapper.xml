@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.xiaotu.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaotu.mybatis.mapper.DeptMapper">
+
+
+
+    <!-- 多步查询解决一对多的关系 -->
+    <select id="getDeptAndEmpByStepOne" resultMap="deptAndEmpByStepOneResultMap">
+        select * from dept where did = #{did};
+    </select>
+    <resultMap id="deptAndEmpByStepOneResultMap" type="dept">
+        <id property="did" column="did"></id>
+        <result property="deptName" column="dept_name"></result>
+        <collection property="emps" select="com.xiaotu.mybatis.mapper.EmpMapper.getDeptAndEmpByStepTwo" column="did" fetchType="lazy"></collection>
+    </resultMap>
+    
+
+    <!-- 通过collection解决一对多的关系 -->
+    <select id="getDeptAndEmp" resultMap="getDeptAndEmpResultMap">
+        select * from dept left join emp on dept.did = emp.did where dept.did = #{did};
+    </select>
+    <resultMap id="getDeptAndEmpResultMap" type="Dept">
+        <id property="did" column="did"></id>
+        <result property="deptName" column="dept_name"></result>
+        <collection property="emps" ofType="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+        </collection>
+    </resultMap>
+
+    <!--根据员工分布查部门 第二步-->
+    <select id="getDeptAndEmpByStepTwo" resultType="dept">
+        select * from dept where did = #{did};
+    </select>
+
+
+</mapper>
