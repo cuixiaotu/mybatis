@@ -1331,7 +1331,120 @@ public void testInsertMoreByList(){
 
 ## 尊享版
 
+QBC查询
+
+```java
+	public void testMBG(){
+        try {
+            InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            SqlSession sqlSession = sqlSessionFactory.openSession(true);
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            //查询所有数据
+            /* List<Emp> list = mapper.selectByExample(null);
+            list.forEach(emp -> System.out.println(emp));*/
+            //根据条件查询
+            /*EmpExample example = new EmpExample();
+            example.createCriteria().andEmpNameEqualTo("abc").andAgeGreaterThanOrEqualTo(20);
+            example.or().andDidIsNotNull();
+            List<Emp> list = mapper.selectByExample(example);
+            list.forEach(emp -> System.out.println(emp));*/
+            mapper.updateByPrimaryKeySelective(new Emp(1,"admin",22,null,"456@qq.com",3));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
 
 
 
+# 第九章 分页查询
+
+## 添加依赖
+
+```xml
+<dependency>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper</artifactId>
+    <version>5.1.4</version>
+</dependency>
+```
+
+
+
+## 配置分页插件
+
+- 在MyBatis的核心配置文件（mybatis-config.xml）中配置插件
+
+```xml
+<plugins>
+     <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+</plugins>
+```
+
+## 分页插件的使用
+
+ 开启分页功能
+
+- 在查询功能之前使用
+
+  ```xml
+  PageHelper.startPage(int pageNum, int pageSize)
+  ```
+
+  开启分页功能
+
+  - pageNum：当前页的页码
+  - pageSize：每页显示的条数
+
+  ```java
+      public void testPageHelper(){
+          try {
+              InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+              SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+              SqlSession sqlSession = sqlSessionFactory.openSession(true);
+              EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+              //访问第一页，每页四条数据
+              Page<Object> page = PageHelper.startPage(1,4);
+              ist.forEach(emp -> System.out.println(emp));
+              System.out.println(page);
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
+  ```
+
+-  使用PageInfo
+
+```java
+public void testPageHelper(){
+     try {
+      		InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+            SqlSession sqlSession = sqlSessionFactory.openSession(true);
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+
+            PageHelper.startPage(1, 4);
+            List<Emp> list = mapper.selectByExample(null);
+            PageInfo<Emp> page = new PageInfo<>(list, 5);
+            list.forEach(emp -> System.out.println(emp));
+            System.out.println(page);
+          } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+常用数据：
+pageNum：当前页的页码
+pageSize：每页显示的条数
+size：当前页显示的真实条数
+total：总记录数
+pages：总页数
+prePage：上一页的页码
+nextPage：下一页的页码
+isFirstPage/isLastPage：是否为第一页/最后一页
+hasPreviousPage/hasNextPage：是否存在上一页/下一页
+navigatePages：导航分页的页码数
+navigatepageNums：导航分页的页码，[1,2,3,4,5]
 

@@ -11,6 +11,9 @@
     <typeAliases>
         <package name="com.xiaotu.mybatis.pojo"/>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 
     <environments default="development">
         <environment id="development">
@@ -26,4 +29,5 @@
     <mappers>
         <package name="com.xiaotu.mybatis.mapper"/>
     </mappers>
+
 </configuration>

@@ -23,16 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/test/java/com/xiaotu/mybatis/test/MBGTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-mbg/src/test/java/com/xiaotu/mybatis/test/PageHelperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/mybatis-mbg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/mybatis-mbg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/target/classes/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/target/classes/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-mbg/target/test-classes/com/xiaotu/mybatis/test/MBGTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-mbg/target/test-classes/com/xiaotu/mybatis/test/MBGTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +109,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MBGTest.testMBG">
+  <component name="RunManager" selected="JUnit.PageHelperTest.testPageHelper">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -154,22 +155,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLMapperTest.testDeleteMoreByArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.DynamicSQLMapperTest" />
-      <option name="METHOD_NAME" value="testDeleteMoreByArray" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DynamicSQLMapperTest.testInsertMoreByList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-demo3" />
       <extension name="coverage">
@@ -202,13 +187,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PageHelperTest.testPageHelper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-mbg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.PageHelperTest" />
+      <option name="METHOD_NAME" value="testPageHelper" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PageHelperTest.testPageHelper" />
+        <item itemvalue="JUnit.DynamicSQLMapperTest.testInsertMoreByList" />
         <item itemvalue="JUnit.MBGTest.testMBG" />
         <item itemvalue="JUnit.CacheMapTest.testOneCache" />
         <item itemvalue="JUnit.CacheMapTest.testTwoCache" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testInsertMoreByList" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testDeleteMoreByArray" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +227,7 @@
       <workItem from="1657268974876" duration="12790000" />
       <workItem from="1657510851828" duration="11617000" />
       <workItem from="1657528571578" duration="20535000" />
-      <workItem from="1657607039241" duration="2615000" />
+      <workItem from="1657607039241" duration="4859000" />
     </task>
     <servers />
   </component>
@@ -270,38 +271,38 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="634" y="319" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183811577" />
-    <state width="1876" height="544" key="GridCell.Tab.0.bottom" timestamp="1657609546446">
+    <state width="1876" height="428" key="GridCell.Tab.0.bottom" timestamp="1657615827079">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="544" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657609546446" />
-    <state width="1876" height="544" key="GridCell.Tab.0.center" timestamp="1657609546446">
+    <state width="1876" height="428" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615827079" />
+    <state width="1876" height="428" key="GridCell.Tab.0.center" timestamp="1657615827079">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="544" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657609546446" />
-    <state width="1876" height="544" key="GridCell.Tab.0.left" timestamp="1657609546446">
+    <state width="1876" height="428" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615827079" />
+    <state width="1876" height="428" key="GridCell.Tab.0.left" timestamp="1657615827079">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="544" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657609546446" />
-    <state width="1876" height="544" key="GridCell.Tab.0.right" timestamp="1657609546446">
+    <state width="1876" height="428" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615827079" />
+    <state width="1876" height="428" key="GridCell.Tab.0.right" timestamp="1657615827079">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="544" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657609546446" />
-    <state width="1876" height="371" key="GridCell.Tab.1.bottom" timestamp="1657606975981">
+    <state width="1876" height="428" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615827079" />
+    <state width="1876" height="371" key="GridCell.Tab.1.bottom" timestamp="1657615801802">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606975981" />
-    <state width="1876" height="371" key="GridCell.Tab.1.center" timestamp="1657606975981">
+    <state width="1876" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615801802" />
+    <state width="1876" height="371" key="GridCell.Tab.1.center" timestamp="1657615801802">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606975981" />
-    <state width="1876" height="371" key="GridCell.Tab.1.left" timestamp="1657606975981">
+    <state width="1876" height="371" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615801802" />
+    <state width="1876" height="371" key="GridCell.Tab.1.left" timestamp="1657615801802">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606975981" />
-    <state width="1876" height="371" key="GridCell.Tab.1.right" timestamp="1657606975981">
+    <state width="1876" height="371" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615801802" />
+    <state width="1876" height="371" key="GridCell.Tab.1.right" timestamp="1657615801802">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606975981" />
+    <state width="1876" height="371" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615801802" />
     <state x="440" y="153" key="SettingsEditor" timestamp="1657273088424">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -326,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="330" y="239" key="new project wizard/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657607764942" />
-    <state x="616" y="265" width="672" height="677" key="run.anything.popup" timestamp="1657538669071">
+    <state x="616" y="265" width="672" height="677" key="run.anything.popup" timestamp="1657615821714">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="616" y="265" width="672" height="677" key="run.anything.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657538669071" />
+    <state x="616" y="265" width="672" height="677" key="run.anything.popup/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657615821714" />
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1657283965557">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
