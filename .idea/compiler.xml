@@ -9,6 +9,7 @@
         <module name="mybatis-demo3" />
         <module name="mybatis-demo1" />
         <module name="mybatis-demo2" />
+        <module name="mybatis-mbg" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="mybatis-demo2" target="1.8" />
       <module name="mybatis-demo2-bak" target="1.8" />
       <module name="mybatis-demo3" target="1.8" />
+      <module name="mybatis-mbg" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
