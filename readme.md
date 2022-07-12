@@ -383,7 +383,7 @@ public class MyBatisTest {
 # 第三章 MyBatis获取参数值的两种方式（重点）
 
 - MyBatis获取参数值的两种方式：`${}`和`#{}`
-- `${}`的本质就是字符串拼接，`#{}的本质就是占位符赋值
+- `${}`的本质就是字符串拼接，`#{}`的本质就是占位符赋值
 - `${}`使用字符串拼接的方式拼接sql，若为字符串类型或日期类型的字段进行赋值时，需要手动加单引号；但是`#{}`使用占位符赋值的方式拼接sql，此时为字符串类型或日期类型的字段进行赋值时，可以自动添加单引号
 
 
@@ -895,3 +895,198 @@ List<Emp> getDeptAndEmpByStepTwo(@Param("did") Integer did);
     }
 ```
 
+
+
+# 第六章 动态SQL
+
+- Mybatis框架的动态SQL技术是一种根据特定条件动态拼装SQL语句的功能，它存在的意义是为了解决拼接SQL语句字符串时的痛点问题
+
+## if标签
+
+- if标签可通过test属性（即传递过来的数据）的表达式进行判断，若表达式的结果为true，则标签中的内容会执行；反之标签中的内容不会执行
+- 在where后面添加一个恒成立条件1=1
+  - 这个恒成立条件并不会影响查询的结果
+  - 这个1=1可以用来拼接and语句，例如：当empName为null时
+    - 如果不加上恒成立条件，则SQL语句为select * from t_emp where and age = ? and sex = ? and email = ?，此时where会与and连用，SQL语句会报错
+    - 如果加上一个恒成立条件，则SQL语句为select * from t_emp where 1= 1 and age = ? and sex = ? and email = ?，此时不报错
+
+```xml
+<select id="getEmpByConditionOne" resultType="Emp">
+    select * from emp where 1=1
+    <if test="empName != null and empName != ''">
+        emp_name = #{empName}
+    </if>
+    <if test="age != null and age != ''">
+        and age = #{age}
+    </if>
+    <if test="sex != null and sex != ''">
+        and sex = #{sex}
+    </if>
+    <if test="email != null and email != ''">
+        and email = #{email}
+    </if>
+</select>
+```
+
+## where标签
+
+- where和if一般结合使用：
+  - 若where标签中的if条件都不满足，则where标签没有任何功能，即不会添加where关键字
+  - 若where标签中的if条件满足，则where标签会自动添加where关键字，并将条件最前方多余的and/or去掉
+
+```xml
+<select id="getEmpByConditionTwo" resultType="Emp">
+    select * from emp
+    <where>
+        <if test="empName != null and empName != ''">
+            emp_name = #{empName}
+        </if>
+        <if test="age != null and age != ''">
+            and age = #{age}
+        </if>
+        <if test="sex != null and sex != ''">
+            or sex = #{sex}
+        </if>
+        <if test="email != null and email != ''">
+            and email = #{email}
+        </if>
+    </where>
+</select>
+```
+
+
+
+## trim 标签
+
+- trim用于去掉或添加标签中的内容
+- 常用属性
+  prefix：在trim标签中的内容的前面添加某些内容
+  suffix：在trim标签中的内容的后面添加某些内容
+  prefixOverrides：在trim标签中的内容的前面去掉某些内容
+  suffixOverrides：在trim标签中的内容的后面去掉某些内容
+- 若trim中的标签都不满足条件，则trim标签没有任何效果，也就是只剩下select * from emp
+
+```xml
+<sql id="empColumns">eid,emp_name,age,sex,email</sql>
+<select id="getEmpByCondition" resultType="Emp">
+    select <include refid="empColumns"></include> from emp
+    <trim prefix="where" suffixOverrides="and|or">
+        <if test="empName != null and empName != ''">
+            emp_name = #{empName} and
+        </if>
+        <if test="age != null and age != ''">
+            age = #{age} or
+        </if>
+        <if test="sex != null and sex != ''">
+            sex = #{sex} and
+        </if>
+        <if test="email != null and email != ''">
+            email = #{email}
+        </if>
+    </trim>
+</select>
+```
+
+## choose、when、otherwise
+
+- `choose、when、otherwise`相当于`if...else if..else`
+- when至少要有一个，otherwise至多只有一个
+- 相当于`if a else if b else if c else d`，只会执行其中一个
+
+```xml
+<select id="getEmpByChoose" resultType="emp">
+    select * from emp
+    <where>
+        <choose>
+            <when test="empName != null and empName != ''">
+                emp_name = #{empName}
+            </when>
+            <when test="age != null and age != ''">
+                age = #{age}
+            </when>
+            <when test="sex != null and sex != ''">
+                sex = #{sex}
+            </when>
+            <when test="email != null and email != ''">
+                email = #{email}
+            </when>
+            <otherwise>
+                did = 1
+            </otherwise>
+        </choose>
+    </where>
+</select>
+```
+
+## foreach
+
+- 属性：
+  - collection：设置要循环的数组或集合
+  - item：表示集合或数组中的每一个数据
+  - separator：设置循环体之间的分隔符，分隔符前后默认有一个空格，如`,`
+  - open：设置foreach标签中的内容的开始符
+  - close：设置foreach标签中的内容的结束符
+- 批量删除
+
+```xml
+<delete id="deleteMoreByArray">
+    delete from emp
+    <where>
+        <foreach collection="eids" item="eid" separator="or">
+            eid = #{eid}
+        </foreach>
+    </where>
+</delete>
+```
+
+```java
+public void testDeleteMoreByArray(){
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
+    System.out.println(mapper.deleteMoreByArray(new Integer[] {1,2,3}));
+}
+```
+
+
+
+- 批量添加
+
+```xml
+<insert id="insertMoreByList">
+    insert into emp values
+    <foreach collection="emps" item="emp" separator=",">
+        (null ,#{emp.empName}, #{emp.age},#{emp.sex},#{emp.email},null )
+    </foreach>
+</insert>
+```
+
+```java
+public void testInsertMoreByList(){
+    SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+    DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
+    Emp emp1 = new Emp(null,"a1",23,"男","123@qq.com");
+    Emp emp2 = new Emp(null,"a2",23,"男","123@qq.com");
+    Emp emp3 = new Emp(null,"a3",23,"男","123@qq.com");
+    List<Emp> emps = Arrays.asList(emp1, emp2, emp3);
+    System.out.println(mapper.insertMoreByList(emps));
+}
+```
+
+
+
+## SQL片段
+
+- sql片段，可以记录一段公共sql片段，在使用的地方通过include标签进行引入
+- 声明sql片段：`<sql>`标签
+
+```xml
+<sql id="empColumns">eid,emp_name,age,sex,email</sql>
+```
+
+- 引用sql片段：`<include>`标签
+
+```xml
+<select id="getEmpByCondition" resultType="Emp">
+	select <include refid="empColumns"></include> from t_emp
+</select>
+```

@@ -1,4 +1,4 @@
-package com.xiaotu.mybatis;
+package com.xiaotu.mybatis.test;
 
 import com.xiaotu.mybatis.mapper.DeptMapper;
 import com.xiaotu.mybatis.mapper.EmpMapper;
