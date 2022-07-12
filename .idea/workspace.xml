@@ -23,13 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b28ce4-318f-4065-a404-c6e11a2bfab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/java/com/xiaotu/mybatis/mapper/DynamicSQLMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/resources/com/xiaotu/mybatis/mapper/DynamicSQLMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/test/java/com/xiaotu/mybatis/test/DynamicSQLMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/java/com/xiaotu/mybatis/mapper/CacheMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/resources/com/xiaotu/mybatis/mapper/CacheMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/resources/ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mybatis-demo3/src/test/java/com/xiaotu/mybatis/test/CacheMapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo3/src/main/java/com/xiaotu/mybatis/pojo/Emp.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo3/src/main/java/com/xiaotu/mybatis/pojo/Emp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-demo3/src/test/java/com/xiaotu/mybatis/ResultMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo3/src/test/java/com/xiaotu/mybatis/test/ResultMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo3/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-demo3/target/classes/com/xiaotu/mybatis/mapper/DynamicSQLMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-demo3/target/classes/com/xiaotu/mybatis/mapper/DynamicSQLMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,9 +41,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="mybatis-config" />
-        <option value="Interface" />
         <option value="ParameterMapper" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -83,13 +84,6 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\project\mybatis" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.xiaotu.mybatis.utils" />
-      <recent name="com.xiaotu2.mybatis.pojo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\project\mybatis\mybatis-demo3\src\main\resources" />
       <recent name="D:\project\project\mybatis\mybatis-demo2\src\main\java" />
@@ -97,13 +91,21 @@
       <recent name="D:\project\project\mybatis\mybatis-demo2\src" />
       <recent name="D:\project\project\mybatis\mybatis-demo2\src\main" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xiaotu.mybatis.utils" />
+      <recent name="com.xiaotu2.mybatis.pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\project\mybatis\mybatis-demo3\src\main\resources\com\xiaotu\mybatis\mapper" />
+      <recent name="D:\project\project\mybatis" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DynamicSQLMapperTest.testInsertMoreByList">
+  <component name="RunManager" selected="JUnit.CacheMapTest.testOneCache">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -111,6 +113,38 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CacheMapTest.testOneCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.CacheMapTest" />
+      <option name="METHOD_NAME" value="testOneCache" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CacheMapTest.testTwoCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-demo3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.CacheMapTest" />
+      <option name="METHOD_NAME" value="testTwoCache" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,38 +181,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLMapperTest.testGetEmpByCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.DynamicSQLMapperTest" />
-      <option name="METHOD_NAME" value="testGetEmpByCondition" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DynamicSQLMapperTest.testGetEmpByConditionTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-demo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaotu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaotu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaotu.mybatis.test.DynamicSQLMapperTest" />
-      <option name="METHOD_NAME" value="testGetEmpByConditionTwo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DynamicSQLMapperTest.testInsertMoreByList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-demo3" />
       <extension name="coverage">
@@ -197,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CacheMapTest.testOneCache" />
+        <item itemvalue="JUnit.CacheMapTest.testTwoCache" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testInsertMoreByList" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testDeleteMoreByArray" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByChoose" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByCondition" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByConditionTwo" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +220,7 @@
       <workItem from="1657265295161" duration="3649000" />
       <workItem from="1657268974876" duration="12790000" />
       <workItem from="1657510851828" duration="11617000" />
-      <workItem from="1657528571578" duration="16825000" />
+      <workItem from="1657528571578" duration="19717000" />
     </task>
     <servers />
   </component>
@@ -262,42 +264,46 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="634" y="319" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657183811577" />
-    <state width="1876" height="206" key="GridCell.Tab.0.bottom" timestamp="1657596766066">
+    <state width="1876" height="348" key="GridCell.Tab.0.bottom" timestamp="1657606129004">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657596766066" />
-    <state width="1876" height="206" key="GridCell.Tab.0.center" timestamp="1657596766066">
+    <state width="1876" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606129004" />
+    <state width="1876" height="348" key="GridCell.Tab.0.center" timestamp="1657606129004">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="206" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657596766066" />
-    <state width="1876" height="206" key="GridCell.Tab.0.left" timestamp="1657596766066">
+    <state width="1876" height="348" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606129004" />
+    <state width="1876" height="348" key="GridCell.Tab.0.left" timestamp="1657606129004">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="206" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657596766066" />
-    <state width="1876" height="206" key="GridCell.Tab.0.right" timestamp="1657596766066">
+    <state width="1876" height="348" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606129004" />
+    <state width="1876" height="348" key="GridCell.Tab.0.right" timestamp="1657606129004">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="206" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657596766066" />
-    <state width="1876" height="371" key="GridCell.Tab.1.bottom" timestamp="1657528561459">
+    <state width="1876" height="348" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606129004" />
+    <state width="1876" height="371" key="GridCell.Tab.1.bottom" timestamp="1657605359686">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657528561459" />
-    <state width="1876" height="371" key="GridCell.Tab.1.center" timestamp="1657528561459">
+    <state width="1876" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657605359686" />
+    <state width="1876" height="371" key="GridCell.Tab.1.center" timestamp="1657605359686">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657528561459" />
-    <state width="1876" height="371" key="GridCell.Tab.1.left" timestamp="1657528561459">
+    <state width="1876" height="371" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657605359686" />
+    <state width="1876" height="371" key="GridCell.Tab.1.left" timestamp="1657605359686">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657528561459" />
-    <state width="1876" height="371" key="GridCell.Tab.1.right" timestamp="1657528561459">
+    <state width="1876" height="371" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657605359686" />
+    <state width="1876" height="371" key="GridCell.Tab.1.right" timestamp="1657605359686">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1876" height="371" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657528561459" />
+    <state width="1876" height="371" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657605359686" />
     <state x="440" y="153" key="SettingsEditor" timestamp="1657273088424">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="440" y="153" key="SettingsEditor/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657273088424" />
+    <state x="552" y="312" key="Vcs.Push.Dialog.v2" timestamp="1657606088731">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="552" y="312" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1080.1920@0.0.1920.1160" timestamp="1657606088731" />
     <state x="658" y="470" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1657183151063">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
